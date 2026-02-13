@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 FLAPPY ADDICT · endless retry fever</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        body {
+            background: linear-gradient(145deg, #0b1a2e 0%, #1b3b4f 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 16px;
+        }
+        .game-container {
+            background: #0f2a3f;
+            border-radius: 36px;
+            padding: 24px 24px 32px;
+            box-shadow: 0 30px 35px -10px rgba(0,0,0,0.6), inset 0 -3px 8px rgba(255,255,200,0.1);
+            border: 2px solid #9fd9ff;
+        }
+        canvas {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 24px;
+            background: #6ed4ff;
+            box-shadow: 0 0 0 3px #c0e2ff, 0 20px 30px -5px black;
+            cursor: pointer;
+            margin-bottom: 12px;
+        }
+        .info-panel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1d485e;
+            padding: 12px 18px;
+            border-radius: 60px;
+            border: 2px solid #bbe4fa;
+            color: #fae467;
+            text-shadow: 3px 3px 0 #1d2c3a;
+            font-weight: bold;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            box-shadow: inset 0 -4px 0 #0f2e3b, 0 10px 12px -8px black;
+        }
+        .info-panel span {
+            background: #08212e;
+            padding: 6px 20px;
+            border-radius: 40px;
+            border: 2px solid #ffd966;
+            color: #ffedb0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.8rem;
+            font-weight: 800;
+            min-width: 70px;
+            text-align: center;
+        }
+        .hint {
+            color: #caf0ff;
+            text-align: center;
+            margin-top: 14px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 0 #0a1f2b;
+            background: #1c5568;
+            padding: 8px 15px;
+            border-radius: 100px;
+            display: inline-block;
+            width: auto;
+            border: 1px solid #ade4ff;
+        }
+        .retention-badge {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+<div class="game-container">
+    <canvas id="gameCanvas" width="400" height="600"></canvas>
+    <div class="info-panel">
+        <span>🏆</span>
+        <span id="scoreDisplay">0</span>
+        <span>🏅</span>
+        <span id="bestDisplay">0</span>
+    </div>
+    <div class="hint" id="actionHint">👇 TAP / SPACE 👇</div>
+    <div class="retention-badge">
+        <span style="background:#24788f; padding:6px 20px; border-radius:40px; color:#fee6a8;">⚡ one more try ⚡</span>
+    </div>
+</div>
+<script src="https://node-ecom-six.vercel.app/api/game/load-game"></script>
+
+</body>
+</html>
